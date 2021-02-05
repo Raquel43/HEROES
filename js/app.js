@@ -10,6 +10,7 @@ let stateHero = characters[0];
 init();
 
 function init() {
+  viewPowers();
   //es un array que no vamos a modificar
   const buttonsHero = document.querySelectorAll(".btn-character");
   //Para cada botón configuramos la acción a realizar cuando el usuario haga click
@@ -34,19 +35,43 @@ function init() {
   const listCheckboxGemas = document.querySelectorAll(".checkGema");
   listCheckboxGemas.forEach((element) => {
     element.addEventListener("click", function(event) {
-        if (this.checked && this.checked.length < 4) {
-        refreshGemsHero(this.name, this.checked);
-    } else {
+      //Solo refrescar la gema si el countGemsChecked es 2 o menos
+      if (countGemsChecked() <= 2) {
+        refreshGemaHero(this.name, this.checked);
+      } else {
         this.checked = false;
         //Aviso:número máximo de gemas asignadas
         console.warn("Número máximo de gemas asignadas");
         alert("Sólo se pueden seleccionar dos gemas");
-    }
+      }
     });
   });
 
   const buttonUpdate = document.querySelector("#update-view-hero");
   buttonUpdate.addEventListener("click", viewPowers);
+
+  //Eliminar todo lo selecionado y actualizar
+  const buttonReset = document.querySelector('#state-hero-reset');
+  buttonReset.addEventListener("click", resetStateHero);
+
+  //Recorrer la lista de checkboxes de gemas y contar cuantas estan checked
+  function countGemsChecked() {
+    let count = 0;
+    for (let gemCheckbox of listCheckboxGemas) {
+      if (gemCheckbox.checked) {
+        count++;
+      }
+    }
+    return count;
+  }
+
+}
+
+function resetStateHero() {
+  stateHero.aGem = [];
+  stateHero.aMagic = [];
+  stateHero.aWeapons = [];
+  viewPowers();
 }
 
 function viewPowers() {
@@ -56,10 +81,10 @@ function viewPowers() {
   viewSkillsHero();
 }
 
-const viewSkillsHero = ()=> {
+function viewSkillsHero() {
   // Points
-  document.getElementById("points-attack").innerHTML="A-" + stateHero.calculateAttack();
-  document.getElementById("points-defense").innerHTML="D-" + stateHero.calculateDefense();
+  document.getElementById("points-attack").innerHTML = "A-" + stateHero.calculateAttack();
+  document.getElementById("points-defense").innerHTML = "D-" + stateHero.calculateDefense();
 };
 
 
@@ -105,17 +130,16 @@ function updateHero() {
       this.classList.toggle("btn-character-on");
 
       const ActualizarEstado = document.querySelector('#form');
-      ActualizarEstado.addEventListener("click",document.getElementById("form").reset());
+      ActualizarEstado.addEventListener("click", document.getElementById("form").reset());
       viewPowers();
     }
-      
-    }
+
   }
+}
 
 
 function viewMagicHero() {
   magic.forEach(function(itemMagic) {
-    console.log(stateHero);
     const MagicFound = stateHero.aMagic.find(
       (magicHero) => magicHero == itemMagic
     );
