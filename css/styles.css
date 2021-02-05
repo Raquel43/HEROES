@@ -1,0 +1,196 @@
+/* General */
+body{
+    background-color:#222222;
+    color:#fff;
+    --seccciones: black;/*coral;*/ 
+}
+
+/* Grid principal amb dues columnes:
+- La primera més gran amb coses
+- La segona més petita amb les opcions a escogir
+*/
+main{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--seccciones);
+}
+.item-off{
+    filter: grayscale(100%);
+    border: solid 2px #ccc;
+    background-color:#aaa;
+}
+.item-on{
+    filter: grayscale(0%);
+    border: solid 2px yellow;
+}
+.box-item {
+    width: 80px;
+    height: 80px;
+    background-color:#fff;
+    border-radius:20px;
+}
+.box-item img{
+    width: 100%;
+    height: 100%;
+    border-radius:20px;
+}
+
+/* Grid Main Personajes */
+/*--------------------------------------------*/
+#box-personaje{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 120px auto 80px;
+    grid-template-rows: 60px 70% 100px;
+}
+#box-personaje > section{
+    /* background-color: #ccc; */
+}
+
+.box-hero{
+    height: 500px;
+    text-align: center;
+}
+.box-hero img{
+    height:100%;
+}
+
+#tipo-personaje{
+    grid-column: 1 / span 3;
+}
+
+/* Magia */
+#magia{
+    /*
+    justify-content:flex-end;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: right;
+}
+#magia > div {
+    margin-bottom: 10px;
+}
+
+/* tipo-personaje */
+#tipo-personaje{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+}
+#tipo-personaje div{
+    margin: 10px;
+}
+
+
+/* Armas */
+#armas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Gemas */
+#gemas {
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: center; /* Aliniació horizontal */
+    align-items: center;     /* Aliniació vertical */
+}
+#gemas div{
+    margin:20px;
+}
+.box-armas{
+    margin-bottom: 10px;
+}
+
+
+
+/* Formulario opciones */
+#box-opciones{
+    padding-left:30px ;
+}
+#box-opciones h1{
+    line-height: 80px;;
+    font:bold 20px Arial;
+    color: blue;
+    border:dotted 2px blue;
+    width: 80%;
+    text-align: center;
+    padding:10px;
+}
+#box-opciones label{ 
+    padding-right: 15px;
+    font:bold 16px Arial, Calibri;
+    letter-spacing: 2px;
+}
+#box-opciones h2{
+    border-bottom:solid 4px ;
+    color:yellow;
+    width:200px;
+    padding-top:40px;
+} 
+.panel-button{
+    padding: 20px;
+    text-align: center;
+}
+/* Estils botons a partir del generador*/
+.btn-character, .panel-button button{
+    box-shadow:inset 0px 0px 15px 3px #23395e;
+	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color:#2e466e;
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+.btn-character-on{
+    box-shadow:inset 0px 0px 15px 3px #e67a73;
+	background:linear-gradient(to bottom, #e4685d 5%, #eb675e 100%);
+	background-color:#e4685d;
+	border-radius:17px;
+	border:1px solid #ffffff;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.panel-button button:hover{
+    color:yellow;
+}
+
+
+#skills{
+    display: flex;
+    
+}
+
+#points-attack, #points-defense{
+    width: 50px;
+    height: 30px;
+    border:solid 1px #ccc;
+    
+    color: #2B426B;
+    background-color: #fff;
+    position: relative;
+    margin-top:-60px;
+    margin-right: 10px;
+    text-align: center;
+
+    padding-top: 10px;
+    font:bold 18px Arial;
+}
+
+

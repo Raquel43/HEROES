@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <main>
+        <div id="box-personaje">
+            <section id="tipo-personaje">
+                <div class="box-personaje"><button type="button" id="witcher" class="btn-character btn-character-on">Witcher</button></div>
+                <div class="box-personaje"><button type="button" id="aragon" class="btn-character" >Aragon</button></div>
+                <div class="box-personaje"><button type="button" id="vampire" class="btn-character" >Vampire</button></div>
+                <div class="box-personaje"><button type="button" id="sirocu" class="btn-character" >Sirocu</button></div>
+            </section>
+            <section id="magia">
+                <div id="lightning" class="box-item item-off box-magia"><img src="img/lightning.png" alt=""></div>
+                <div id="ice" class="box-item item-off box-magia"><img src="img/ice.png" alt=""></div>
+                <div id="fire" class="box-item item-off box-magia"><img src="img/fire.png" alt=""></div>
+                <div id="wind" class="box-item item-off box-magia"><img src="img/wind.png" alt=""></div>
+            </section>
+            <section id="personaje">
+                <div class="box-hero"><img id="hero-img" src="img/hero-witcher.png" alt=""></div>
+                <div id="skills">
+                    <div id="points-attack"></div>
+                    <div id="points-defense"></div>
+                </div>
+                
+            </section>
+            <section id="armas">
+                <div id="sword" class="box-item item-off box-armas"><img src="img/sword.png" alt=""></div>
+                <div id="shield" class="box-item item-off box-armas"><img src="img/shield.png" alt=""></div>
+                <div id="hatchet" class="box-item item-off box-armas"><img src="img/hatchet.png" alt=""></div>
+                <div id="crossbow" class="box-item item-off box-armas"><img src="img/crossbow.png" alt=""></div>
+            </section>
+            <section id="gemas">
+                <div id="diamond" class="box-item box-gem item-off"><img src="img/diamond.png" alt=""></div>
+                <div id="esmerald" class="box-item box-gem item-off"><img src="img/esmerald.png" alt=""></div>
+                <div id="ruby" class="box-item box-gem item-off"><img src="img/ruby.png" alt=""></div>
+                <div id="sapphire" class="box-item box-gem item-off"><img src="img/sapphire.png" alt=""></div>
+            </section>
+        </div>
+        <div id="box-opciones">
+            <form name="hero-options" id="form" action="">
+                <h1>Opciones</h1>
+                <div>
+                    <h2>Magia</h2>
+                    <input type="checkbox" id="opc-fire" name="fire" class="checkMagia"  value="2" />
+                    <label for="opc-fire">Fuego</label>
+                    <input type="checkbox" id="opc-ice" name="ice" class="checkMagia" value="2"/>
+                    <label for="opc-ice">Hielo</label>
+                    <input type="checkbox" id="opc-lightning" name="lightning" class="checkMagia" value="2" />
+                    <label for="opc-lightning">Rayo</label>
+                    <input type="checkbox" id="opc-wind" name="wind" class="checkMagia" value="2" />
+                    <label for="opc-wind">Viento</label>
+                </div>
+                <div>
+                    <h2>Armas</h2>
+                    <input type="checkbox" id="opc-sword " name="sword" class="checkArma" value="3" />
+                    <label for="opc-sword">Espada</label>
+                    <input type="checkbox" id="opc-hatchet" name="hatchet" class="checkArma" value="3"/>
+                    <label for="hatchet">Hacha</label>
+                    <input type="checkbox" id="opc-shield" name="shield" class="checkArma" value="3" />
+                    <label for="shield">Escudo</label>
+                    <input type="checkbox" id="opc-crossbow" name="crossbow" class="checkArma" value="3" />
+                    <label for="crossbow">Bayesta</label>
+                </div>
+                <div>
+                    <h2>Gemas</h2>
+                    <input type="checkbox" id="opc-diamente" name="diamond" class="checkGema" value="2" />
+                    <label for="opc-diamente">Diamante</label>
+                    <input type="checkbox" id="opc-esmeralda" name="esmerald" class="checkGema" value="2" />
+                    <label for="opc-esmeralda">Esmeralda</label>
+                    <input type="checkbox" id="opc-ruby" name="ruby" class="checkGema" value="2" />
+                    <label for="opc-ruby">Rubí</label>
+                    <input type="checkbox" id="opc-sapphire" name="sapphire" class="checkGema" value="2" />
+                    <label for="opc-sapphire">Zafiro</label>
+                </div>
+
+                <!-- Punts d'habilitat extra-->
+                <!-- <div>
+                    <h2>Extra points: <span id="points">4</span></h2>
+                    <h3>Fuerza:</h3>
+                    <div>
+                    
+                    </div>
+                    <h3>Defensa</h3>
+                    <div></div>
+                </div> -->
+
+                <div class="panel-button">
+                    <button id="state-hero-reset" type="reset">Cancelar</button>
+                    <button id="update-view-hero" type="button">Actualizar</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/app.js" type="module"></script>
+
+</body>
+
+</html>
